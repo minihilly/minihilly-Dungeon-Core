@@ -1,0 +1,6 @@
+{
+   "pack": {
+      "pack_format": 10,
+      "description": "(2D) Grid generator datapack - intended for use with a grid-based 2D maze generator"
+   }
+}

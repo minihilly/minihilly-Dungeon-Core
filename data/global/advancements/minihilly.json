@@ -1,0 +1,18 @@
+{
+    "display": {
+        "title": "minihilly",
+        "description": "Datapacks made by minihilly",
+        "icon": {
+            "item": "minecraft:player_head",
+            "nbt": "{SkullOwner: 'minihilly'}"
+        },
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "global:root",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}
