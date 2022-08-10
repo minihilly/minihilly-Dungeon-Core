@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "minihilly_dungeoneer_grid:uninstall",
+        "minihilly_dungeoneer_main:uninstall",
+        "minihilly_dungeoneer_install_manager:uninstall/initialize"
+    ]
+}

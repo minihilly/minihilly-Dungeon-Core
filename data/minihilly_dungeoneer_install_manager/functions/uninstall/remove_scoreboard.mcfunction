@@ -1,0 +1,4 @@
+#> minihilly_dungeoneer_install_manager:uninstall/remove_scoreboard
+#
+
+scoreboard objectives remove minihilly_dungeoneer_install_manager.setup

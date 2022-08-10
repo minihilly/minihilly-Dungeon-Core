@@ -1,6 +1,6 @@
 #> minihilly_dungeoneer_main:install/create_scoreboard
 #       creates required scoreboard objectives for grid generator
-#@within minihilly_dungeoneer_main:install/initialize
+#@internal
 
 #>
 #   temporary value holder, used mostly for calculations within a single tick

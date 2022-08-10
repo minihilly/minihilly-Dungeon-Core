@@ -1,10 +1,12 @@
 #> minihilly_dungeoneer_main:install/initialize
 #       initializer to install minihilly_dungeon_grid datapack
 #@within
-#   minihilly_2d_grid:load
+#   minihilly_dungeoneer_main:install
 
+#region msg
 #   install message
-#   unused  |   function minihilly_2d_grid:player/ui/install_message
+say PLACEHOLDER MAIN INSTALL [minihilly_dungeoneer_main:install/initialize]
+#endregion
 
 #   create scoreboard objectives
 function minihilly_dungeoneer_main:install/create_scoreboard
