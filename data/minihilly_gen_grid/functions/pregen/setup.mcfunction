@@ -5,7 +5,7 @@
 #   minihilly_gen_grid:gen/loop_end/forceload_add
 #   minihilly_gen_grid:destroy/unload_chunks
 
-say minihilly_gen_grid:pregen/setup
+#say minihilly_gen_grid:pregen/setup
 
 tellraw @a[tag=debug,scores={debugLogPriority=201..}] {"text":"","extra": [{"text":"[mGrid] ","color":"light_purple","hoverEvent": {"action":"show_text","contents": "minihilly Grid\nDebug Info"}},{"text":"minihilly_gen_grid:pregen/setup"}]}
 
