@@ -3,6 +3,6 @@
     "values": [
         "minihilly_dungeoneer_install_manager:install/initialize",
         "minihilly_dungeoneer_main:install",
-        "minihilly_dungeoneer_grid:install"
+        "minihilly_gen_grid:install"
     ]
 }

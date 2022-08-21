@@ -6,7 +6,7 @@
 #   Stores a lot of fakeplayer values, check the fakeplayer info for more
 #@internal
 #define objective minihilly_dungeoneer_main.setup
-scoreboard objectives add minihilly_dungeoneer_main.setup dummy {"text":"minihilly Dungeoneer Main Config","color":"red"}
+scoreboard objectives add minihilly_dungeoneer_main.setup dummy {"text":"minihilly Dungeoneer Main Setup","color":"red"}
 
 #>
 #   Used as a bool to check if a scoreboard objective exists or not

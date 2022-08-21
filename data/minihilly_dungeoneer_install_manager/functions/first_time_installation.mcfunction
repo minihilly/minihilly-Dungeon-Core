@@ -15,7 +15,3 @@ scoreboard objectives add minihilly_dungeoneer_install_manager.setup dummy
 
 #   check if datapack needs installing
 execute unless score $installed minihilly_dungeoneer_install_manager.setup matches -2147483648.. run function minihilly_dungeoneer_install_manager:install/initialize
-
-#   tickbuster
-say TICKBUSTER SETUP [minihilly_dungeoneer_install_manager:first_time_installation]
-function tickbuster:.module/setup
