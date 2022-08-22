@@ -10,13 +10,12 @@ tellraw @a[tag=debug,scores={debugLogPriority=201..}] {"text":"","extra": [{"tex
 #>
 #@private
 #define score_holder #z_offset
-
 #>
 #@private
-#define score_holder minihilly_gen_grid.volume.chunk_aligned.x
+#define score_holder #volume.chunk_aligned.x
 #>
 #@private
-#define score_holder minihilly_gen_grid.volume.chunk_aligned.z
+#define score_holder #volume.chunk_aligned.z
 #endregion
 
 #region round start pos to chunk (start rounding code extrapolated from Arcensoth's Chunkbuster)
@@ -29,6 +28,8 @@ scoreboard players operation @s minihilly_gen_grid.chunk.position.start.z /= #16
 # multiplty by 16 (length of a chunk).
 scoreboard players operation @s minihilly_gen_grid.chunk.position.start.x *= #16 minihilly_gen_grid.const
 scoreboard players operation @s minihilly_gen_grid.chunk.position.start.z *= #16 minihilly_gen_grid.const
+#endregion
+
 #region calculate offset of start
 # copy *_start to temporary var
 scoreboard players operation #x_offset minihilly_gen_grid.temp = @s minihilly_gen_grid.position.start.x
@@ -50,17 +51,20 @@ scoreboard players operation @s minihilly_gen_grid.chunk.length.z = @s minihilly
 scoreboard players operation @s minihilly_gen_grid.chunk.length.x *= @s minihilly_gen_grid.length.x
 scoreboard players operation @s minihilly_gen_grid.chunk.length.z *= @s minihilly_gen_grid.length.z
 # mod 16 length. unless return 0, add 16 to length
-scoreboard players operation #minihilly_gen_grid.volume.chunk_aligned.x minihilly_gen_grid.temp = @s minihilly_gen_grid.chunk.length.x
-scoreboard players operation #minihilly_gen_grid.volume.chunk_aligned.z minihilly_gen_grid.temp = @s minihilly_gen_grid.chunk.length.z
-scoreboard players operation #minihilly_gen_grid.volume.chunk_aligned.x minihilly_gen_grid.temp %= #16 minihilly_gen_grid.const
-scoreboard players operation #minihilly_gen_grid.volume.chunk_aligned.z minihilly_gen_grid.temp %= #16 minihilly_gen_grid.const
-execute unless score #minihilly_gen_grid.volume.chunk_aligned.x minihilly_gen_grid.temp matches 0 run scoreboard players operation @s minihilly_gen_grid.chunk.length.x += #16 minihilly_gen_grid.const
-execute unless score #minihilly_gen_grid.volume.chunk_aligned.z minihilly_gen_grid.temp matches 0 run scoreboard players operation @s minihilly_gen_grid.chunk.length.z += #16 minihilly_gen_grid.const
+scoreboard players operation #volume.chunk_aligned.x minihilly_gen_grid.temp = @s minihilly_gen_grid.chunk.length.x
+scoreboard players operation #volume.chunk_aligned.z minihilly_gen_grid.temp = @s minihilly_gen_grid.chunk.length.z
+scoreboard players operation #volume.chunk_aligned.x minihilly_gen_grid.temp %= #16 minihilly_gen_grid.const
+scoreboard players operation #volume.chunk_aligned.z minihilly_gen_grid.temp %= #16 minihilly_gen_grid.const
+execute unless score #volume.chunk_aligned.x minihilly_gen_grid.temp matches 0 run scoreboard players operation @s minihilly_gen_grid.chunk.length.x += #16 minihilly_gen_grid.const
+execute unless score #volume.chunk_aligned.z minihilly_gen_grid.temp matches 0 run scoreboard players operation @s minihilly_gen_grid.chunk.length.z += #16 minihilly_gen_grid.const
 # add offset to length
 scoreboard players operation @s minihilly_gen_grid.chunk.length.x += #x_offset minihilly_gen_grid.temp
 scoreboard players operation @s minihilly_gen_grid.chunk.length.z += #z_offset minihilly_gen_grid.temp
+# reset temp values
 scoreboard players reset #x_offset minihilly_gen_grid.temp
 scoreboard players reset #z_offset minihilly_gen_grid.temp
+scoreboard players reset #volume.chunk_aligned.x minihilly_gen_grid.temp
+scoreboard players reset #volume.chunk_aligned.z minihilly_gen_grid.temp
 #scoreboard players operation @s minihilly_gen_grid.chunk.length.z += #16 minihilly_gen_grid.const
 # divide by 16 (length of a chunk)
 scoreboard players operation @s minihilly_gen_grid.chunk.length.x /= #16 minihilly_gen_grid.const
